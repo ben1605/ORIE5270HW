@@ -1,0 +1,15 @@
+Name: hw1.txt
+Date: 8/21/18
+Author: Weijia Mao
+Topic: what we covered and why does that matter.
+
+AWS: we covered AWS today, and the advantage of using it is that we can use better computing power instead of our own computer to solve problems more efficiently. In addition, it offers free edition although with not much space and moderate computing power.
+
+Vim/Linux: Vim can be used to edit files, and Linux has many powerful functions including print/list/make directory,etc. It also prevents virus and is free to use.
+
+Github: we learned many basic instructions of Github, and it is very convenient for companies to delegate a big project to many people to work simultaneously. It also has a log history, which can be used when tracing back to older versions.
+
+Shell: it has powerful functions. We can use shell scripts to achieve many things such as automatically running thousands of python files, getting certain rows of a file, etc.
+
+Python: we talked about class, recursion and some other concepts in python. Python has many advantages. For instance, it is easy to read, has simple syntax,and is a high-level language.
+
