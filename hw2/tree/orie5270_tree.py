@@ -13,6 +13,10 @@ class Tree(object):
         else:
             return None
 
+    # this function will use recursion to iteratively find the 2d-arrays formed by left tree
+    # and right tree, and it will add one column of delimiters when combining left tree array
+    # and right tree array, as well as add one row of delimiters to the top with the middle one
+    # being the value of the root.
     def get_tree(self):
         delimiter = "|"
         plot = []
@@ -66,6 +70,9 @@ class Tree(object):
         plot[0][temp] = self.get_value_root(self)
         return plot
 
+    # this function will delete the last row if there is no node in the last row, and
+    # will remove unnecessary columns from the resulting 2d-array got from get_tree.
+    # At last, it will return a tree in the form of a list.
     def print_tree(self):
         delimiter = "|"
         flag = True
