@@ -3,12 +3,14 @@ from tree.orie5270_tree import Tree, Node
 
 
 class Test_tree(unittest.TestCase):
+    # Test tree with one node
     def test1(self):
         node1 = Node(1, None, None)
         tree1 = Tree(node1)
         answer1 = [["1"]]
         assert tree1.print_tree() == answer1
 
+    # Test a balanced tree
     def test2(self):
         node1 = Node(1, None, None)
         node2 = Node(2, None, None)
@@ -28,6 +30,7 @@ class Test_tree(unittest.TestCase):
                    ['4', '|', '5', '|', '6', '|', '7']]
         assert tree2.print_tree() == answer2
 
+    # Test a left tree
     def test3(self):
         node1 = Node(1, None, None)
         node2 = Node(2, None, None)
@@ -43,6 +46,7 @@ class Test_tree(unittest.TestCase):
                    ['4', '|', '|', '|', '|', '|', '|', '|', '|', '|', '|', '|', '|', '|', '|']]
         assert tree3.print_tree() == answer3
 
+    # Test an unbalanced tree
     def test4(self):
         node1 = Node(1, None, None)
         node2 = Node(2, None, None)

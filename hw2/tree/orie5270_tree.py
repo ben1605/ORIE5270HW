@@ -103,12 +103,3 @@ class Node(object):
         self.value = value
         self.left = left
         self.right = right
-
-
-if __name__ == '__main__':
-    a = Node(2, None, None)
-    e = Node(1, None, None)
-    b = Node(3, e, None)
-    c = Node(4, b, e)
-    c = Tree(c)
-    c.print_tree()
