@@ -1,8 +1,8 @@
 import unittest
-from orie5270_tree import Tree, Node
+from tree.orie5270_tree import Tree, Node
 
 
-class TestSum(unittest.TestCase):
+class Test_tree(unittest.TestCase):
     def test1(self):
         node1 = Node(1, None, None)
         tree1 = Tree(node1)
