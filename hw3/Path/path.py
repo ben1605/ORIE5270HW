@@ -46,7 +46,7 @@ def find_shortest_path(file, source, destination):
     dist[source] = 0.0
     path = dict([(float(elem), []) for elem in graph.keys()])
     for i in path.keys():
-        path[i].append(source)
+        path[i].append(float(source))
     heapq.heappush(F, (dist[source], source))
     F_n.append(F[-1][1])
     while F != []:
@@ -77,7 +77,10 @@ def find_shortest_path(file, source, destination):
                         heapq.heappush(tempF, temp)
                     F = tempF
                     F_n.append(node[0])
-    return path[destination], dist[destination]
+    if len(path[destination]) == 1 and source != destination:
+        return [], float("inf")
+    else:
+        return path[destination], dist[destination]
 
 
 def func(graph, step, source, destination):
@@ -133,6 +136,6 @@ def find_negative_cycles(file):
         for i in range(len(path)):
             for j in range(len(path)):
                 if path[j] == path[i] and i != j:
-                    return path[i:j]
+                    return path[i:j + 1]
     else:
         return []
