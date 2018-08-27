@@ -78,9 +78,9 @@ def find_shortest_path(file, source, destination):
                     F = tempF
                     F_n.append(node[0])
     if len(path[destination]) == 1 and source != destination:
-        return [], float("inf")
+        return float("inf"), []
     else:
-        return path[destination], dist[destination]
+        return dist[destination], path[destination]
 
 
 def func(graph, step, source, destination):
@@ -121,7 +121,7 @@ def func(graph, step, source, destination):
 def find_negative_cycles(file):
     graph = get_graph(file)
     if len(graph) == 0:
-        return []
+        return None
     width = len(graph)
     flag = False
     for i in graph.keys():
@@ -138,4 +138,4 @@ def find_negative_cycles(file):
                 if path[j] == path[i] and i != j:
                     return path[i:j + 1]
     else:
-        return []
+        return None
