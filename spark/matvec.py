@@ -27,9 +27,9 @@ def matrix_vector(matrix, vector):
     sc = SparkContext(conf=conf)
     lines = sc.textFile(matrix)
     vecs = sc.textFile(vector)
-    mat = lines.map(lambda l: list(map(float, re.split(',', l))))  # separate matrix by ,
+    mat = lines.map(lambda l: list(map(float, re.split(',|:', l))))  # separate matrix by ,
     mat = mat.map(lambda l: (row(l), (pair(l))))  # return (row index starting with 1, (element, column idx st w/ 1)
-    vec = vecs.map(lambda l: list(map(float, re.split(',', l))))  # separate vec by ,
+    vec = vecs.map(lambda l: list(map(float, re.split(',|:', l))))  # separate vec by ,
     vec = vec.map(lambda l: pair_v(l))
     mat = mat.map(lambda l: order(expand(l)))  # change order of row idx and col idx
     mat = mat.flatMap(reduce_m)
@@ -42,7 +42,7 @@ def matrix_vector(matrix, vector):
     mat = mat.map(lambda l: (l[0][0], l[0][1] * l[1]))
     res = mat.reduceByKey(lambda n1, n2: n1 + n2)
     res = res.map(lambda l: l[1])
-    #print(res)
+    #print(res.collect())
     # res.saveAsTextFile("test111")
     sc.stop()
     return res
