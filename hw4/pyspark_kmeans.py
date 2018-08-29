@@ -11,7 +11,7 @@ def find_c(l, c1):
         return (np.argmin(norms), (l, 1))
 
 def final(ans):
-        file = open("res1.txt","w")
+        file = open("res.txt","w")
         for i in ans:
             temp = "" 
             for elem in i:
