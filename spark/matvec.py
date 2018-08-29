@@ -41,10 +41,11 @@ def matrix_vector(matrix, vector):
     mat = mat.flatMap(remove)
     mat = mat.map(lambda l: (l[0][0], l[0][1] * l[1]))
     res = mat.reduceByKey(lambda n1, n2: n1 + n2)
-    res = res.map(lambda l: l[1]).collect()
-    print(res)
+    res = res.map(lambda l: l[1])
+    #print(res)
     # res.saveAsTextFile("test111")
     sc.stop()
+    return res
 
 if __name__ == '__main__':
-    matrix_vector(sys.argv[1], sys.argv[2])
+    print(matrix_vector(sys.argv[1], sys.argv[2]))
