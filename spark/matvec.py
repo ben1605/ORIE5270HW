@@ -6,7 +6,7 @@ import numpy as np
 def pair(l):
     return [(l[i], i) for i in range(1,len(l))] # return element, and then its column index starting with 1
 def row(l):
-    return l[0]
+    return l[0] + 1
 def pair_v(l):
     return [(i + 1, l[i]) for i in range(len(l))]  # return vector with index
 def expand(l):
